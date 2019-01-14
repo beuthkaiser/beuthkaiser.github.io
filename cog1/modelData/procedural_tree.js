@@ -223,7 +223,7 @@ define(["exports", "data"], function (exports, data) {
 
         if (Math.random() < 0.66)
         {
-            extrudeQuad(Math.floor(Math.random() * (barkEnd-10))+10, [0, 0, Math.random()+0.25], Math.random() * 4);
+            extrudeQuad(Math.floor(Math.random() * (barkEnd-20))+20, [0, 0, Math.random()+0.25], Math.random() * 4);
         }
 
         //instance.vertexNormals = [];

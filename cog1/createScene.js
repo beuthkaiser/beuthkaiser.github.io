@@ -22,7 +22,7 @@ define(["exports", "scenegraph", "animation","importerOBJ"], //
           
             // BEGIN exercise myModel
           
-          if (esa.myModel)
+          if (esa.myModel || esa.all)
           {
             var myModelNode = scenegraph.createNodeWithModel("king", "king", {
                 scale: 200
@@ -31,7 +31,7 @@ define(["exports", "scenegraph", "animation","importerOBJ"], //
             myModelNode.translate([0, -400, 0]);
           }
           
-          if (esa.sphere)
+          if (esa.sphere || esa.all)
           {
           var sphereNode = scenegraph.createNodeWithModel("sphere", "sphere", {
                 scale: 200
@@ -49,42 +49,65 @@ define(["exports", "scenegraph", "animation","importerOBJ"], //
             
             // END exercise myModel
 
-            //return;
-
+*/
+            if(esa.dice || esa.all)
+            {
             //var cubeNode = scenegraph.createNodeWithModel("cube", "cube", {scale:100, textureURL:"brickWall.jpg"});		
             var cubeNode1 = scenegraph.createNodeWithModel("cube 1", "cube", {
                 scale: 70,
                 textureURL: "stoneWall.jpg"
             });
-            cubeNode1.translate([50, 200, 0]);
+            
+            
+            cubeNode1.translate([-400, 200, 0]);
+         
             //cubeNode1.rotate([1,1,1]);
             var cubeNode2 = scenegraph.createNodeWithModel("cube 2", "cube", {
                 scale: 50,
                 textureURL: "uvTest.jpg"
             });
-            cubeNode2.translate([-100, -400, 0]);
+           
+            cubeNode2.translate([-200, 200, 0]);
+       
             //cubeNode2.rotate([-1,-1,-1]);
-            var cubeNode3 = scenegraph.createNodeWithModel("cube procedural texture", "cube", {
-                scale: 50,
-                textureURL: "sampleProceduralRGB"
-            });
+            
             var cubeNode4 = scenegraph.createNodeWithModel("cube six faces texture", "cube", {
-                scale: 200,
+                scale: 50,
                 textureURL: "OrbitCube.gif",
                 sixFacesTexture: true
             });
+            
+            cubeNode4.translate([200, 200, 0]);
+            
             var cubeNode5 = scenegraph.createNodeWithModel("cube 3x3 texture", "cube", {
                 scale: 50,
                 textureURL: "cubeColor.png",
                 sixFacesTexture: true
             });
+            
+            cubeNode5.translate([400, 200, 0]);
+           
             var cubeNode6 = scenegraph.createNodeWithModel("cube Escher texture", "cube", {
-                scale: 200,
+                scale: 100,
                 textureURL: "EscherCubeFish.gif",
                 sixFacesTexture: true
             });
               cubeNode6.rotateTo([0, 0, 0]);
-
+              
+            cubeNode6.translate([0, 200, 0]);
+        
+            }
+            
+            
+            if (esa.proceduralTexture || esa.all)
+            {
+            var cubeNode3 = scenegraph.createNodeWithModel("cube procedural texture", "cube", {
+                scale: 200,
+                textureURL: "sampleProceduralRGB"
+            });
+         
+            }
+            /*
             var insideOutPolyNode = scenegraph.createNodeWithModel("insideOutPoly", "insideOutPoly",{scale : 1});
           
             var diamondNode = scenegraph.createNodeWithModel("diamond", "diamond");
@@ -96,10 +119,14 @@ define(["exports", "scenegraph", "animation","importerOBJ"], //
                 color: 8
             });
 
+  
             var teapotNode = scenegraph.createNodeWithModel("teapot", "teapot", {
                 color: 0,
                 scale: 40
             });
+*/    
+       if (esa.teapot || esa.all)
+     {
             var dirtyTeapotNode = scenegraph.createNodeWithModel("dirtyTeapot", "teapot_dirty", {
                 color: 8
             });
@@ -108,7 +135,8 @@ define(["exports", "scenegraph", "animation","importerOBJ"], //
                 color: 7
             });
             //teapotNode.rotate([1,1,1]);
-
+     }
+     /*
             var waltheadNode = scenegraph.createNodeWithModel("walthead", "walthead", {
                 color: 8
             });
@@ -127,8 +155,9 @@ define(["exports", "scenegraph", "animation","importerOBJ"], //
             });
             planeNode2.setVisible(false);
             
-         
-       
+         */
+       if (esa.obj || esa.all)
+       {
             var dates = importerOBJ.getDates();
             var importedNodes = [];
             for (var i =0 ; i <dates.length; i++)
@@ -139,17 +168,14 @@ define(["exports", "scenegraph", "animation","importerOBJ"], //
                 color: 9,
               //  textureURL: "land_ocean_ice_2048.jpg",
                 objData: dates[i],
-                
-                //textureURL: "sampleProceduralRGB"
-               // callback: importAllNodesInTheCorrectOrder,
-               // callbackParam: ++i
+               
                 });
             
             }
         
-      
+       }
             
-            
+            /*
               
   ////////////////////////////////////////////
   
@@ -211,21 +237,39 @@ define(["exports", "scenegraph", "animation","importerOBJ"], //
             
             procedural_labyrinthNode.setVisible(false);
             
-               var procedural_tree = scenegraph.createNodeWithModel("procedural_tree", "procedural_tree", {
+            */
+            
+            if (esa.tree || esa.all)
+            {
+               var procedural_tree_1 = scenegraph.createNodeWithModel("procedural_tree_1", "procedural_tree", {
                 scale: 50
             });
-            procedural_tree.setVisible(false);
-             procedural_tree.rotateTo([1.82, 3.12, 0]);
-            procedural_tree.translate([200, -150, 0]);
-     
+            procedural_tree_1.rotateTo([1.82, 3.12, 0]);
+            procedural_tree_1.translate([-200, -100, 0]);
+            
+                 var procedural_tree_2 = scenegraph.createNodeWithModel("procedural_tree_2", "procedural_tree", {
+                scale: 50
+            });
+            procedural_tree_2.rotateTo([1.82, 3.12, 0]);
+            procedural_tree_2.translate([0, -100, 0]);
+            
+                 var procedural_tree_3 = scenegraph.createNodeWithModel("procedural_tree_3", "procedural_tree", {
+                scale: 50
+            });
+            procedural_tree_3.rotateTo([1.82, 3.12, 0]);
+            procedural_tree_3.translate([+200, -100, 0]);
+            }
+            
+            if (esa.building || esa.all)
+            {
                  var procedural_building = scenegraph.createNodeWithModel("procedural_building", "procedural_building", {
                 scale: 50
             });
                procedural_building.rotateTo([1.82, 3.12, 0]);
             procedural_building.translate([200, -150, 0]);
-            procedural_building.setVisible(false);
+             if (!esa.building) procedural_building.setVisible(false);
+            }
             
-            */
             
             // Set the initially interactive node [by name].
             // If not set, it is the first node created.
@@ -233,7 +277,7 @@ define(["exports", "scenegraph", "animation","importerOBJ"], //
             //scenegraph.setInteractiveNode(torusNode);
 
             // Create a node for the light, which is not visible by default.
-            var lightnode = scenegraph.createPointLightNode("light", "diamond");
+            //var lightnode = scenegraph.createPointLightNode("light", "diamond");
 
             // Set light parameter.
             // ambientLI, pointLI, pointPos, specularLI, specularLIExpo
