@@ -21,11 +21,23 @@ define(["exports", "scenegraph", "animation","importerOBJ"], //
 
           
             // BEGIN exercise myModel
+          
+          if (esa.myModel)
+          {
             var myModelNode = scenegraph.createNodeWithModel("king", "king", {
                 scale: 200
             });
             myModelNode.rotateTo([-1.6, 0, 0]);
             myModelNode.translate([0, -400, 0]);
+          }
+          
+          if (esa.sphere)
+          {
+          var sphereNode = scenegraph.createNodeWithModel("sphere", "sphere", {
+                scale: 200
+            });
+          }
+          
      /*
                  var cubeNode = scenegraph.createNodeWithModel("cube", "cube", {
                 scale: 100
@@ -33,9 +45,7 @@ define(["exports", "scenegraph", "animation","importerOBJ"], //
             cubeNode.rotateTo([1.6, -3.87, 0]);
      
      
-            var sphereNode = scenegraph.createNodeWithModel("sphere", "sphere", {
-                scale: 200
-            });
+            
             
             // END exercise myModel
 

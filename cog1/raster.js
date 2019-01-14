@@ -106,7 +106,7 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
                 // set Alpha.
                 color.rgbaShaded[3] = color.rgba[3];
             }
-            debugger;     
+           
             
             var dX = endX - startX;
             var dY = endY - startY;
@@ -148,7 +148,7 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
             console.log(texture.sample([0,1],color));
             console.log(texture.sample([0.5,0.5],color));
             console.log(texture.sample([1,1],color));
-            debugger;
+            
 */
             // z is linearly interpolated with delta dz in each step of the driving variable.
             var dz;
