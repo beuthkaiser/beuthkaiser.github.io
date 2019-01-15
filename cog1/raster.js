@@ -170,7 +170,8 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
                 return;
             }
            
-      //      framebuffer.set(x, y, z, color); //hack vs rare bug where startpoint is sometimes missed in wireframe mode with certain unusual angles
+           if (texture) {color=texture.sample([u,v],color);}
+           framebuffer.set(x, y, z, color); //this prevents the start point from being missed (which rarely happens)
             
             // x is driving variable.
             if (dXAbs >= dYAbs) {

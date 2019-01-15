@@ -57,19 +57,6 @@ function(exports, dojo, scene, model, node, shader, importerOBJ) {
 		return newNode;
 	}
 
-	function importOBJs()
-	{
-		console.log("not implemented");
-		// var dates = importerOBJ.getDates();
-		/* var importedNodes[];
-		 console.log (dates);
-		 for (var i = 0; i < dates.length;i++)
-		 {
-			importedNodes[i] = createNodeWithModel()
-			
-		 }
-		*/
-	}
 	
 	/*
 		function importModelAsNode(text, name, modeldata, parameter, parent, isLightNode) {
@@ -320,8 +307,5 @@ function(exports, dojo, scene, model, node, shader, importerOBJ) {
 	exports.setInteractiveNodeToFirstVisibleNode = setInteractiveNodeToFirstVisibleNode;
 	// Geometry.
 	exports.toggleTriangulation = toggleTriangulation;
-	
-	//OBJ IMPORT
-	exports.importOBJs = importOBJs;
-	//exports.importModelAsNode = importModelAsNode;
+
 });
